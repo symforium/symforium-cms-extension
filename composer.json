@@ -1,0 +1,27 @@
+{
+    "name": "symforium/symforium-cms-extension",
+    "description": "Symforium Micro-CMS Extension",
+    "authors": [
+        {
+            "name": "Aaron Scherer",
+            "email": "aequasi@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "symforium/symforium-core": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/symforium/symforium-core.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Symforium\\Plugin\\CmsPlugin\\": "src/"
+        }
+    }
+}
