@@ -54,24 +54,7 @@ class BackendController extends Controller
         $manager->remove($page);
         $manager->flush();
 
-        return new JsonResponse('success');
-    }
-
-    /**
-     * @param Page $page
-     * @param int  $published
-     *
-     * @Config\Route("/publish/{page}/{published}", requirements={"published" = "[0|1]"}, defaults={"id" = 1})
-     * @return JsonResponse
-     */
-    public function publishAction(Page $page, $published = 1)
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $page->setPublished($published);
-        $manager->persist($page);
-        $manager->flush();
-
-        return new JsonResponse('success');
+        return $this->redirect($this->generateUrl('symforium_plugin_cmsplugin_backend_view'));
     }
 
     /**
