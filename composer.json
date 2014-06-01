@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-
+        "symforium/symforium-core": "dev-master"
     },
     "require-dev": {
         "symforium/symforium-core": "dev-master"
