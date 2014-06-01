@@ -18,6 +18,20 @@ use Symforium\Core\Plugin;
  */
 class SymforiumCmsPlugin extends Plugin
 {
+    /**
+     * {@inheritDoc}
+     */
+    public static function getRoutingFile()
+    {
+        return '@SymforiumCmsPlugin/Resources/config/routing.yml';
+    }
 
+    /**
+     * {@inheritDoc}
+     */
+    public static function getMenuClass()
+    {
+        return 'Symforium\Plugin\CmsPlugin\Menu\CmsMenu';
+    }
 }
  

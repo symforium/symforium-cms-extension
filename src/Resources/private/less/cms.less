@@ -1,0 +1,105 @@
+.header {
+    height: 52px;
+    border-bottom: 3px solid rgba(26, 188, 156, 1);
+    margin-bottom: 25px;
+
+    .title {
+        padding-left: 25px;
+        font-weight: 800;
+        font-size: 36px;
+        color: rgba(52, 73, 94, 1);
+    }
+}
+
+div#cms_add {
+
+    > form > .row { margin-right: 0; }
+
+    #topRow {
+        background: rgba(52, 152, 219, .9);
+        padding: 30px;
+
+        label {
+            line-height: 1;
+            margin-bottom: 0;
+            color: rgba(236, 240, 241, 1.0);
+            font-size: 110%;
+        }
+
+        input {
+            height: 60px;
+            width: 90%;
+            font-size: 200%;
+            background: inherit;
+            border: none;
+            color: rgba(236, 240, 241, 1.0);
+        }
+
+        button[type=submit] {
+            margin-top: 15px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: rgba(236, 240, 241, 1.0);
+            border-bottom: 4px dashed rgba(236, 240, 241, 1.0);
+        }
+        :-moz-placeholder {
+            color: rgba(236, 240, 241, 1.0);
+            border-bottom: 4px dashed rgba(236, 240, 241, 1.0);
+            opacity:  1;
+        }
+        ::-moz-placeholder {
+            color: rgba(236, 240, 241, 1.0);
+            border-bottom: 4px dashed rgba(236, 240, 241, 1.0);
+            opacity:  1;
+        }
+        :-ms-input-placeholder {
+            color: rgba(236, 240, 241, 1.0);
+            border-bottom: 4px dashed rgba(236, 240, 241, 1.0);
+        }
+    }
+
+    #bottomRow {
+
+        .wmd-panel {
+            .btn-toolbar {
+                background: rgb(26, 188, 156);
+                margin: 0;
+                padding: 0;
+            }
+
+            .btn-default {
+                background: rgba(26, 188, 156,1.0);
+            }
+
+            > .row { margin: 0; }
+
+            .row > .col-xs-6 {
+                padding: 0;
+            }
+        }
+
+        textarea.wmd-input,
+        .wmd-preview {
+            height: 550px;
+            background: rgba(236, 240, 241,1.0);
+            padding: 4px 6px;
+        }
+
+        textarea.wmd-input {
+            resize: none;
+            border: none;
+        }
+
+        .wmd-preview {
+            overflow: auto;
+            border-left: 1px solid rgba(127, 140, 141, 1.0);
+        }
+    }
+
+    div.options {
+        a > i:hover {
+            color: rgba(26, 188, 156, 1);
+        }
+    }
+}

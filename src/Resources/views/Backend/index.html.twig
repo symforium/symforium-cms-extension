@@ -1,5 +1,15 @@
-{% extends 'SyforiumCoreBundle:Layout:admin.html.twig' %}
+{% extends 'SymforiumCoreBundle:Layout:admin.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" media="all" href="/bundles/symforiumcmsplugin/css/cms.css" />
+{% endblock %}
+
+{% block menu %}
+    <p class="navbar-text" >CMS - {{ title }}</p>
+    {{ parent() }}
+{% endblock %}
 
 {% block content %}
-    CMS Plugin
+    {% block cms_content %}{% endblock %}
 {% endblock %}

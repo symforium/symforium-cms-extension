@@ -1,0 +1,84 @@
+.header {
+  height: 52px;
+  border-bottom: 3px solid #1abc9c;
+  margin-bottom: 25px;
+}
+.header .title {
+  padding-left: 25px;
+  font-weight: 800;
+  font-size: 36px;
+  color: #34495e;
+}
+div#cms_add > form > .row {
+  margin-right: 0;
+}
+div#cms_add #topRow {
+  background: rgba(52, 152, 219, 0.9);
+  padding: 30px;
+}
+div#cms_add #topRow label {
+  line-height: 1;
+  margin-bottom: 0;
+  color: #ecf0f1;
+  font-size: 110%;
+}
+div#cms_add #topRow input {
+  height: 60px;
+  width: 90%;
+  font-size: 200%;
+  background: inherit;
+  border: none;
+  color: #ecf0f1;
+}
+div#cms_add #topRow button[type=submit] {
+  margin-top: 15px;
+}
+div#cms_add #topRow ::-webkit-input-placeholder {
+  color: #ecf0f1;
+  border-bottom: 4px dashed #ecf0f1;
+}
+div#cms_add #topRow :-moz-placeholder {
+  color: #ecf0f1;
+  border-bottom: 4px dashed #ecf0f1;
+  opacity: 1;
+}
+div#cms_add #topRow ::-moz-placeholder {
+  color: #ecf0f1;
+  border-bottom: 4px dashed #ecf0f1;
+  opacity: 1;
+}
+div#cms_add #topRow :-ms-input-placeholder {
+  color: #ecf0f1;
+  border-bottom: 4px dashed #ecf0f1;
+}
+div#cms_add #bottomRow .wmd-panel .btn-toolbar {
+  background: #1abc9c;
+  margin: 0;
+  padding: 0;
+}
+div#cms_add #bottomRow .wmd-panel .btn-default {
+  background: #1abc9c;
+}
+div#cms_add #bottomRow .wmd-panel > .row {
+  margin: 0;
+}
+div#cms_add #bottomRow .wmd-panel .row > .col-xs-6 {
+  padding: 0;
+}
+div#cms_add #bottomRow textarea.wmd-input,
+div#cms_add #bottomRow .wmd-preview {
+  height: 550px;
+  background: #ecf0f1;
+  padding: 4px 6px;
+}
+div#cms_add #bottomRow textarea.wmd-input {
+  resize: none;
+  border: none;
+}
+div#cms_add #bottomRow .wmd-preview {
+  overflow: auto;
+  border-left: 1px solid #7f8c8d;
+}
+div#cms_add div.options a > i:hover {
+  color: #1abc9c;
+}
