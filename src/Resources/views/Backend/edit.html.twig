@@ -15,10 +15,6 @@
         });
 
         $(function () {
-            $("textarea[id$=content]")
-                .pagedownBootstrap({sanitize: false})
-                .tabby();
-
             $('input[id$=url]').on('keypress', function(e) {
                 e.preventDefault();
                 $(this).data('user-input', true);
@@ -50,6 +46,51 @@
                     url.val('/'+getSlug($(this).val()))
                 }
             });
+
+            // Because highlight.js is a bit awkward at times
+            var languageOverrides = {
+                js: 'javascript',
+                html: 'xml'
+            };
+
+            marked.setOptions({
+                highlight: function(code, lang){
+                    if (languageOverrides[lang]) {
+                        lang = languageOverrides[lang];
+                    }
+
+                    return hljs.getLanguage(lang) !== undefined ? hljs.highlight(lang, code).value : code;
+                }
+            });
+
+            function update(text) {
+                setOutput(text);
+            }
+
+            function setOutput(val){
+                document.getElementById('out').innerHTML = marked(val);
+            }
+
+            var content = $("textarea[id$=content]");
+            content.tabby();
+            var editor = CodeMirror.fromTextArea(
+                content[0],
+                {
+                    mode: 'gfm',
+                    lineNumbers: true,
+                    //matchBrackets: true,
+                    lineWrapping: true,
+                    theme: 'default'
+                }
+            );
+
+            editor.on('change', function(editor, e) {
+                editor.save();
+                update(content.val());
+            });
+
+            update(content.val());
+            editor.focus();
         })
     </script>
 {% endblock %}
@@ -62,16 +103,16 @@
 
 {% block cms_content %}
     <div id="cms_add">
-        {{ form_start(form, { 'attr': {'class': 'form-horizontal', 'novalidate': 'true'} }) }}
+        {{ form_start(form, { 'attr': {'class': 'form-horizontal', 'novalidate': 'true', 'autocomplete': 'off'} }) }}
             {{ form_errors(form) }}
             <div class="row" id="topRow">
-                <div class="col-xs-4">
+                <div class="col-sm-4">
                     {{ form_widget(form.title) }}
                 </div>
-                <div class="col-xs-4">
+                <div class="col-sm-4">
                     {{ form_widget(form.url) }}
                 </div>
-                <div class="col-xs-1">
+                <div class="col-sm-1">
                     <div class="row">
                         {{ form_label(form.published) }}
                     </div>
@@ -81,12 +122,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-sm-3">
                     {{ form_widget(form.submit) }}
                 </div>
             </div>
             <div class="row" id="bottomRow">
-                {{ form_widget(form.content) }}
+                <div id="in" class="col-sm-6">
+                    {{ form_widget(form.content) }}
+                </div>
+                <div id="out" class="col-sm-6"></div>
             </div>
         {{ form_end(form) }}
     </div>

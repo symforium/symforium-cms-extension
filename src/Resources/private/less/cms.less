@@ -11,8 +11,17 @@
     }
 }
 
-div#cms_add {
+body, #content, #admin-content, #cms_add, #cms_add > form,
+#bottomRow, #bottomRow > div, .CodeMirror, .CodeMirror-scroll,
+.CodeMirror-gutters {
+    height: 100% !important;
+    background: rgba(236, 240, 241,1.0);
+}
+.CodeMirror-gutters {
+    background-color: rgb(247, 247, 247);
+}
 
+div#cms_add {
     > form > .row { margin-right: 0; }
 
     #topRow {
@@ -60,40 +69,57 @@ div#cms_add {
     }
 
     #bottomRow {
-
-        .wmd-panel {
-            .btn-toolbar {
-                background: rgb(26, 188, 156);
-                margin: 0;
-                padding: 0;
-            }
-
-            .btn-default {
-                background: rgba(26, 188, 156,1.0);
-            }
-
-            > .row { margin: 0; }
-
-            .row > .col-xs-6 {
-                padding: 0;
-            }
-        }
-
-        textarea.wmd-input,
-        .wmd-preview {
-            height: 550px;
+        #in, #out, .CodeMirror {
             background: rgba(236, 240, 241,1.0);
-            padding: 4px 6px;
+            font-size: 16px;
         }
 
-        textarea.wmd-input {
-            resize: none;
-            border: none;
+        .CodeMirror pre{
+            line-height: 20px;
         }
 
-        .wmd-preview {
+        #in, #out {
+            padding: 0;
             overflow: auto;
-            border-left: 1px solid rgba(127, 140, 141, 1.0);
+        }
+
+        #in, .CodeMirror {
+            box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.2)
+        }
+
+        .CodeMirror-scroll {
+            min-height: 100%;
+        }
+
+        #out{
+            hr {
+                border-color: rgba(149, 165, 166,1.0);
+            }
+            h1, h2, h3, h4, h5, h6 {
+                margin: 10px 0;
+            }
+
+            padding: 0 20px;
+            color: #444;
+            line-height: 1.5em;
+        }
+
+        @media screen and (max-width: 1024px) {
+            #in {
+                display: none;
+            }
+            #out {
+                left: 0;
+                padding-left: 10px;
+            }
+        }
+
+        .view #in {
+            display: none;
+        }
+        .view #out {
+            left: 0;
+            padding-left: 10px;
         }
     }
 
